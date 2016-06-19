@@ -1,0 +1,39 @@
+{% extends "graphs_base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <h1>Upload file</h1>
+        <p class="lead">Select Exel-file, which contains any numerical data as table of 2 columns and 10 rows.</p>
+    </div>
+
+    <div ng-app = "graphsApp">
+        <div ng-controller = "formController">
+
+            <form enctype="multipart/form-data">{% csrf_token %}
+                <label id="fileLabel" class="file-upload" data-text="Select file">
+                    <input id="id_file" name="file"  type="file" file-model = "myFile">
+                </label>
+                <button type="submit" class="btn btn-primary" ng-click = "uploadFile()" disabled>upload me</button>
+                <br>
+
+                <h4 ng-show="dataReceived">Last uploaded: [[currentFile]]</h4>
+                <button class="btn btn-default" ng-show="dataReceived" ng-click = "viewData()">View</button>
+            </form>
+
+            <br>
+            <zingchart id = "dataChart" zc-json = "dataJson" zc-height = 500 zc-width = 600 ></zingchart>
+        </div>
+    </div>
+
+</div>
+
+{% load staticfiles %}
+<script src="{% static 'graphs/app/js/input_form.js'%}"></script>
+<script>
+global_urls = {
+    post_file: '{% url 'graphdata-add' %}',
+};
+</script>
+{% endblock content %}

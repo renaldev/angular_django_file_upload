@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Graph viewer</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-cookies.js"></script>
+    <script src = "//cdn.zingchart.com/zingchart.min.js" ></script>
+    <script src = "//cdn.zingchart.com/angular/zingchart-angularjs.js" ></script>
+
+    {% load staticfiles %}
+    <script src="{% static 'graphs/app/app.js'%}"></script>
+    <script src="{% static 'graphs/app/directives.js'%}"></script>
+    <script src="{% static 'graphs/app/controllers.js'%}"></script>
+    <script src="{% static 'graphs/app/services.js'%}"></script>
+    <link rel = "stylesheet" href="{% static 'graphs/css/style.css'%}">
+</head>
+<body>
+    {% block content %}{% endblock content %}
+</body>
+</html>
