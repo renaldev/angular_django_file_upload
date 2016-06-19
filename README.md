@@ -6,4 +6,5 @@ dependency:
   - xlwt==1.0.0
 
 Start page - /graphs/new/
+
 Test file path - ./graphs/static/graphs/for_tests/Книга2.xlsx
