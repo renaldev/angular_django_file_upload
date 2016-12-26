@@ -1,3 +1,5 @@
+A simple example of uploading files to Django applications via angular 1.5 frontend.
+
 dependency: 
 
   - Python 3.4
